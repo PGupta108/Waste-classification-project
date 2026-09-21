@@ -1,0 +1,8 @@
+{
+  "img_size": 160,
+  "alpha": 0.35,
+  "batch_size": 16,
+  "epochs_head": 20,
+  "epochs_finetune": 15,
+  "finetune_layers": 30
+}

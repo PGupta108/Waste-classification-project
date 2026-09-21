@@ -1,0 +1,17 @@
+# Core ML
+# Python 3.11 is the supported interpreter for TensorFlow 2.16.x.
+tensorflow==2.16.2
+numpy<2.0
+pillow
+scikit-learn
+matplotlib
+
+# Duplicate/near-duplicate detection during dataset analysis
+imagehash
+
+# Webcam / camera frame handling (predict.py --webcam, uno_q_linux/infer.py)
+opencv-python
+
+# --- On the UNO Q board itself, prefer the lighter runtime instead of full TF: ---
+# tflite-runtime   (or tensorflow-lite-runtime, depending on your App Lab image)
+# opencv-python-headless   (no GUI deps needed on the board)
