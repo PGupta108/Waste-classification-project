@@ -88,8 +88,9 @@ class WasteClassifier:
         return label, confidence, latency_ms, is_confident
 
 def run_on_image(classifier, image_path):
-    img = tf.io.read_file(image_path)
-    img = tf.image.decode_image(img, channels=3).numpy()
+    from PIL import Image
+    img = Image.open(image_path).convert("RGB")  # forces single-frame RGB, no alpha/animation issues
+    img = np.array(img)
     label, conf, latency, is_confident = classifier.predict(img)
     status = "CONFIDENT" if is_confident else "LOW CONFIDENCE"
     print(f"Predicted class: {label.upper()}")
